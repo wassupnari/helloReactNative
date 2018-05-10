@@ -6,10 +6,11 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
-  StyleSheet,
+  Platform, // Check which platform you are on, i.e. iOS or Android
+  StyleSheet, // Create styling
   Text,
-  View
+  View,
+  ActivityIndicator
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -19,23 +20,30 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+
+export default class App extends Component {
   render() {
+
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+
+        // <Text style={styles.welcome}>
+        //   Welcome to React Native, Nari!
+        // </Text>
+        // <Name name='Nari' />
+        // <Name name='Reyna' />
+        // <Name name='Peter' />
       </View>
     );
   }
+}
+
+const Name = (props) => {
+  return (
+    <Text style={styles.name}>
+      { props.name }
+    </Text>
+  )
 }
 
 const styles = StyleSheet.create({
